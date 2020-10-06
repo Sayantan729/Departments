@@ -12,7 +12,7 @@ export class RecordsComponent implements OnInit {
   constructor(private fetchData: DataServiceService) {}
 
   ngOnInit(): void {
-    this._data = this.fetchData.getData();
+    this.fetchData.getData().subscribe(response=>{console.log(response)});
   }
 
   get data()

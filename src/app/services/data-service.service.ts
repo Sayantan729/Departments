@@ -1,24 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataServiceService {
-  private _data = [
-    { name: 'Sayantan Barik', dept: 'CSE', roll: 7, year: 4, sex: 'Male' },
-    
-  ];
+  private _data = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getData() {
-    return this._data;
+    return this.http.get(
+      'https://parkingbooking.000webhostapp.com/getStudents.php'
+    );
   }
 
-  updateData(student)
-  {
-    this._data.splice(0,0,student);
-   
-    
+  updateData(student) {
+    this._data.splice(0, 0, student);
   }
 }
