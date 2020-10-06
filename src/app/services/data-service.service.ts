@@ -16,6 +16,6 @@ export class DataServiceService {
   }
 
   updateData(student) {
-    this._data.splice(0, 0, student);
+    return this.http.post('https://parkingbooking.000webhostapp.com/insertStudent.php',JSON.stringify(student));
   }
 }

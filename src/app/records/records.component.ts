@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataServiceService } from './../services/data-service.service';
+import { ExchangeService } from './../services/exchange.service';
 
 @Component({
   selector: 'app-records',
@@ -7,16 +8,22 @@ import { DataServiceService } from './../services/data-service.service';
   styleUrls: ['./records.component.css'],
 })
 export class RecordsComponent implements OnInit {
-  private _data: any[];
+  
+  @Input('inputData') newData;
+  data
 
-  constructor(private fetchData: DataServiceService) {}
+  constructor(private fetchData: DataServiceService,private exchangeService:ExchangeService) {}
 
   ngOnInit(): void {
-    this.fetchData.getData().subscribe(response=>{console.log(response)});
+    
+    this.data=this.newData;
+    
+    
+    
   }
 
-  get data()
-  {
-    return this._data;
-  }
+  
+
+  
+
 }

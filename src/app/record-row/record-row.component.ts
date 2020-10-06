@@ -12,6 +12,7 @@ export class RecordRowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
     this.dept=(this.student['dept'] as string).toLowerCase();
   }
 

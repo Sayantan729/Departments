@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CommonValidators } from './validators/common.validators';
 import { StudentNameValidators } from './validators/studentName.validators';
 import { RollNumValidators } from './validators/rollNum.validators';
 import { DataServiceService } from './../services/data-service.service';
+import { ExchangeService } from './../services/exchange.service';
 
 @Component({
   selector: 'app-form',
@@ -11,9 +12,13 @@ import { DataServiceService } from './../services/data-service.service';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+  @Output('insertData') insertData=new EventEmitter();
+
+  
   form: FormGroup;
 
-  constructor(private dataservice: DataServiceService) {
+  constructor(private exchangeService:ExchangeService) {
+
     this.form = new FormGroup({
       studentName: new FormControl('', [
         CommonValidators.fieldRequired,
@@ -52,15 +57,18 @@ export class FormComponent implements OnInit {
   }
 
   submit() {
+
     let values = this.form.value;
 
-    this.dataservice.updateData({
+    
+    this.insertData.emit({
       name: values['studentName'],
       dept: values['department'],
       roll: values['rollNum'],
       year: values['year'],
       sex: values['gender'],
     });
+    
     this.clearAll();
   }
 
