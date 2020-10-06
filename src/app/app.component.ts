@@ -25,8 +25,12 @@ export class AppComponent implements OnInit {
 
   updateData(data)
   {
-    
-    this.fetchData.updateData(data).subscribe(response=>{this._data.splice(0,0,data);})
+    this._data.splice(0,0,data);
+    this.fetchData.updateData(data).subscribe(response=>{
+      if(response['Status']!=='OK')
+      this._data.splice(this._data.indexOf(data),1);
+
+    })
    
   }
 }
