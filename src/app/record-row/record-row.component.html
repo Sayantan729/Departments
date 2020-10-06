@@ -1,1 +1,24 @@
-<p>record-row works!</p>
+<div [class]="dept" class="record-row">
+  <div class="left-bar">
+    <div class="name-outer">
+      <span class="name">{{ student.name }}</span>
+    </div>
+    <div>
+     <span class="sex">{{ student.sex }}</span>
+    </div>
+    <div>
+      <span class="year">{{ setSubscript(student.year) }}</span> Year
+    </div>
+  </div>
+  <div class="right-bar">
+    <div class="right-align">
+      <span class="dept">{{ student.dept }}</span>
+    </div>
+
+    <div class="right-align">
+        <span class="roll"><div style="font-size: 0.4em">Roll</div>
+        <div >{{ student.roll }}</div></span>
+        
+    </div>
+  </div>
+</div>
