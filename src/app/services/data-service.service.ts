@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +12,20 @@ export class DataServiceService {
   constructor(private http: HttpClient) {}
 
   getData() {
-    return this.http.get(
-      'https://parkingbooking.000webhostapp.com/getStudents.php'
-    );
+    return from(
+      fetch('https://parkingbooking.000webhostapp.com/getStudents.php', {
+        method: 'GET',
+      })
+    ).pipe(map((response) => response.json()));
   }
 
   updateData(student) {
-    return this.http.post('https://parkingbooking.000webhostapp.com/insertStudent.php',JSON.stringify(student));
+    return from(
+      fetch('https://parkingbooking.000webhostapp.com/insertStudent.php', {
+        method: 'POST',
+        body: JSON.stringify(student),
+      })
+    ).pipe(map((response) => response.json()));
+    //return this.http.post('https://parkingbooking.000webhostapp.com/insertStudent.php',JSON.stringify(student));
   }
 }
