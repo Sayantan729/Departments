@@ -8,13 +8,21 @@ import { RecordRowComponent } from './record-row/record-row.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { TablePageComponent } from './table-page/table-page.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordsComponent,
     RecordRowComponent,
-    FormComponent
+    FormComponent,
+    StudentDetailsComponent,
+    TablePageComponent,
+    HomepageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

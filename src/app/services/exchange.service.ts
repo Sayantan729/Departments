@@ -5,9 +5,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ExchangeService {
-  data;
+  data=[];
 
-  _data:BehaviorSubject<any>;
+  _data;
 
   constructor() {this._data=new BehaviorSubject(this.data); }
 

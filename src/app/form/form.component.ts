@@ -5,6 +5,7 @@ import { StudentNameValidators } from './validators/studentName.validators';
 import { RollNumValidators } from './validators/rollNum.validators';
 import { DataServiceService } from './../services/data-service.service';
 import { ExchangeService } from './../services/exchange.service';
+import { PhoneValidators } from './validators/phone.validators';
 
 @Component({
   selector: 'app-form',
@@ -31,6 +32,8 @@ export class FormComponent implements OnInit {
       gender: new FormControl('', [CommonValidators.fieldRequired]),
       department: new FormControl('', [CommonValidators.fieldRequired]),
       year: new FormControl('', [CommonValidators.fieldRequired]),
+      phone:new FormControl('',[CommonValidators.fieldRequired,PhoneValidators.checkFormat]),
+      address:new FormControl('',[CommonValidators.fieldRequired])
     });
   }
 
@@ -56,6 +59,16 @@ export class FormComponent implements OnInit {
     return this.form.get('department');
   }
 
+  get phone()
+  {
+    return this.form.get('phone');
+  }
+
+  get address()
+  {
+    return this.form.get('address');
+  }
+
   submit() {
 
     let values = this.form.value;
@@ -67,6 +80,8 @@ export class FormComponent implements OnInit {
       roll: values['rollNum'],
       year: values['year'],
       sex: values['gender'],
+      phone:values['phone'],
+      address:values['address']
     });
     
     this.clearAll();

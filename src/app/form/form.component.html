@@ -1,12 +1,25 @@
-<div style="position: sticky; top: 5px;height: calc(100vh); overflow-y: auto;">
+<div style="position: sticky; top: 5px; height: calc(100vh); overflow-y: auto">
   <h2 style="padding: 5px; border-bottom: 1px solid grey; color: white">
     New Student
   </h2>
-  <div style="font-size: smaller; font-style: italic;margin-bottom: 10px; color: rgba(255, 255, 255, 0.349);">Note: Color of rows changes according to department</div>
-  <form style="width: 100%;margin-bottom: 20px;" [formGroup]="form">
+  <div
+    style="
+      font-size: smaller;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.349);
+    "
+  >
+    Note: Color of rows changes according to department
+  </div>
+  <form style="width: 100%; margin-bottom: 20px" [formGroup]="form">
     <div class="input-group">
-        <div><label for="name" style="color:white;font-weight: bolder;">Student name</label></div>
-        
+      <div>
+        <label for="name" style="color: white; font-weight: bolder"
+          >Student name</label
+        >
+      </div>
+
       <input
         formControlName="studentName"
         class="input"
@@ -27,7 +40,11 @@
       </div>
     </div>
     <div class="input-group">
-        <div><label for="roll" style="color:white;font-weight: bolder;">Roll number</label></div>
+      <div>
+        <label for="roll" style="color: white; font-weight: bolder"
+          >Roll number</label
+        >
+      </div>
       <input
         formControlName="rollNum"
         class="input"
@@ -47,7 +64,13 @@
     </div>
 
     <div style="display: flex" class="input-group">
-        <div><label for="gender" style="color:white;font-weight: bolder; margin-right: 20px;">Sex</label></div>
+      <div>
+        <label
+          for="gender"
+          style="color: white; font-weight: bolder; margin-right: 20px"
+          >Sex</label
+        >
+      </div>
       <div style="margin-right: 18px">
         <input
           type="radio"
@@ -73,7 +96,11 @@
       <small>Please select gender</small>
     </div>
     <div style="width: 60%" class="input-group">
-        <div><label for="department" style="color:white;font-weight: bolder;">Department</label></div>
+      <div>
+        <label for="department" style="color: white; font-weight: bolder"
+          >Department</label
+        >
+      </div>
       <select
         class="input"
         id="department"
@@ -92,7 +119,9 @@
       </div>
     </div>
     <div class="input-group">
-        <div><label for="year" style="color:white;font-weight: bolder;">Year</label></div>
+      <div>
+        <label for="year" style="color: white; font-weight: bolder">Year</label>
+      </div>
       <select
         class="input"
         id="year"
@@ -109,11 +138,57 @@
         <small>Please select year</small>
       </div>
     </div>
-    <button class="button submit-button" [disabled]="form.invalid" (click)="submit()">
+
+    <div class="input-group">
+      <div>
+        <label for="phone" style="color: white; font-weight: bolder"
+          >Phone</label
+        >
+      </div>
+      <input
+        class="input"
+        id="phone"
+        placeholder="Phone number"
+        formControlName="phone"
+        [class.error-input]="phone.touched && phone.invalid"
+      />
+
+      <div class="error-text" *ngIf="phone.touched && phone.invalid">
+        <small *ngIf="phone.errors.required">Please enter phone number</small>
+        <small *ngIf="!phone.errors.required && phone.errors.formatNotProper"
+          >Phone number format not proper; Required: 10-digit number without
+          country code
+        </small>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div>
+        <label for="address" style="color: white; font-weight: bolder"
+          >Address</label
+        >
+      </div>
+      <textarea
+        id="address"
+        class="input"
+        rows="3"
+        placeholder="Address"
+        formControlName="address"
+        [class.error-input]="address.touched && address.invalid"
+      ></textarea>
+
+      <div class="error-text" *ngIf="address.touched && address.invalid">
+        <small>Please enter address</small>
+      </div>
+    </div>
+
+    <button
+      class="button submit-button"
+      [disabled]="form.invalid"
+      (click)="submit()"
+    >
       Add Student
     </button>
     <button class="button reset-button" (click)="clearAll()">Reset</button>
   </form>
-
-  
 </div>

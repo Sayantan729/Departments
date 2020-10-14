@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-record-row',
@@ -9,7 +10,7 @@ export class RecordRowComponent implements OnInit {
   @Input('record') student;
   dept;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     
@@ -29,6 +30,12 @@ export class RecordRowComponent implements OnInit {
       return num+" th";
     }
     return num + " th";
+
+  }
+
+  navigateTo()
+  {
+    this.router.navigate(['students',this.student['dept'],this.student['roll'],this.student['year']])
 
   }
 
