@@ -5,8 +5,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
 }
-.input-group
-{
+.input-group {
   margin-bottom: 20px;
 }
 .input {
@@ -19,19 +18,16 @@ body {
   margin-left: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.error-input
-{
+.error-input {
   border: 5px solid #d50000;
 }
-.error-text
-{
+.error-text {
   padding: 1%;
   font-weight: bolder;
   color: #d50000;
 }
-.button
-{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.button {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.2em;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -41,19 +37,16 @@ body {
   padding: 5px 20px;
   margin: 8px;
 }
-.submit-button
-{
-  background-color: rgb(0,123,255);
+.submit-button {
+  background-color: rgb(0, 123, 255);
   color: white;
 }
-.submit-button:disabled
-{
+.submit-button:disabled {
   background-color: rgba(0, 123, 255, 0.486);
   color: rgba(255, 255, 255, 0.486);
 }
-.reset-button
-{
-  background-color: rgb(220,53,69);
+.reset-button {
+  background-color: rgb(220, 53, 69);
   color: white;
 }
 .records {
@@ -135,41 +128,35 @@ body {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.homepage-back
-{
-  background-image: url('assets/collegegrounds.jpeg');
+.homepage-back {
+  background-image: url("assets/collegegrounds.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
-.homepage-welcome
-{
+.homepage-welcome {
   color: white;
   padding: 350px 120px 30px 100px;
   font-size: 4rem;
-  
-  background-image: linear-gradient(to bottom,transparent,rgb(33,33,33));
-  
-  
+
+  background-image: linear-gradient(to bottom, transparent, rgb(33, 33, 33));
 }
 
-.homepage-links
-{
+.homepage-links {
   width: 85%;
   margin: 80px auto;
-  
+
   display: grid;
   grid-template-columns: auto auto auto;
 }
 
-.homepage-link-card
-{
+.homepage-link-card {
   color: white;
   font-size: 2.5rem;
   padding-top: 200px;
   box-shadow: 0px 0px 10px black;
-  background-image:url("https://www.emagenit.com/websitegraphics/ExcelUses1.png");
+  background-image: url("https://www.emagenit.com/websitegraphics/ExcelUses1.png");
   background-size: cover;
   margin: 10px;
   border-radius: 10px;
@@ -185,58 +172,51 @@ body {
   -o-border-radius: 10px;
 }
 
-.homepage-card-inner
-{
-  background-image: linear-gradient(to bottom,transparent,black);
+.homepage-card-inner {
+  background-image: linear-gradient(to bottom, transparent, black);
   padding-top: 100px;
   padding-left: 30px;
   padding-bottom: 50px;
-  border-radius:10px ;
-  -webkit-border-radius:10px ;
-  -moz-border-radius:10px ;
-  -ms-border-radius:10px ;
-  -o-border-radius:10px ;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-.homepage-link-card:hover
-{
+.homepage-link-card:hover {
   box-shadow: 0px 10px 10px gray;
 }
 
-.student-card
-{
+.student-card {
   color: white;
   width: 50%;
   margin: auto;
   padding: 30px;
   text-align: center;
   border-radius: 10px;
+  margin-bottom: 50px;
+
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  
 }
 
-.cse-shadow
-{
-  box-shadow: 3px 3px 10px  #388e3c;
+.cse-shadow {
+  box-shadow: 5px 5px 10px green;
 }
-.ece-shadow
-{
-  box-shadow: 3px 3px 10px #ffd600;
+.ece-shadow {
+  box-shadow: 5px 5px 10px yellow;
 }
-.ee-shadow
-{
-  box-shadow: 3px 3px 10px #d50000;
+.ee-shadow {
+  box-shadow: 5px 5px 10px red;
 }
-.it-shadow
-{
-  box-shadow: 3px 3px 10px #1a237e;
+.it-shadow {
+  box-shadow: 5px 5px 10px blue;
 }
-.student-card-inner
-{
-  background-color: rgb(39,44,52);
+.student-card-inner {
+  background-color: rgb(39, 44, 52);
   padding: 20px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -245,32 +225,28 @@ body {
   -o-border-radius: 10px;
 }
 
-.card-name
-{
+.card-name {
   font-size: 3rem;
   margin: 5px 0px;
 }
 
-.card-roll,.card-dept,.card-year
-{
+.card-roll,
+.card-dept,
+.card-year {
   font-size: 2rem;
   margin: 5px 0px;
 }
 
-.card-sex
-{
+.card-sex {
   font-size: 1rem;
   margin: 20px 0px 5px 0px;
-
 }
 
-.card-phone
-{
+.card-phone {
   font-size: 2rem;
   margin: 15px 0px;
 }
-.card-address
-{
+.card-address {
   font-size: 1.5rem;
   margin: 15px 0px;
 }

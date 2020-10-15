@@ -12,6 +12,13 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { TablePageComponent } from './table-page/table-page.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
+
+export function playerFactory() {
+  return player;
+}
+
 
 @NgModule({
   declarations: [
@@ -28,7 +35,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LottieModule.forRoot({player:playerFactory})
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
