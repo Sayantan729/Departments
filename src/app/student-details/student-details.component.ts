@@ -23,7 +23,7 @@ export class StudentDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.options={path:'assets/tryagain.json'};
+    this.options={path:'assets/animations/tryagain.json'};
     this.searching=true;
     this.route.paramMap.subscribe((params) => {
       console.log(params);
@@ -39,7 +39,7 @@ export class StudentDetailsComponent implements OnInit {
             ) {
               this.student = element;
               this.options={
-                path:'assets/'+this.student['sex'].toLowerCase()+'.json'
+                path:'assets/animations/'+this.student['sex'].toLowerCase()+'.json'
               };
             }
           });
