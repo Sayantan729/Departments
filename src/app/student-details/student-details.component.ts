@@ -15,7 +15,7 @@ export class StudentDetailsComponent implements OnInit {
   student;
   searching;
 
-  options:AnimationOptions={path:'../../assets/tryagain.json'};
+  options:AnimationOptions={path:'assets/tryagain.json'};
 
   constructor(
     private fetchData: DataServiceService,
@@ -38,7 +38,7 @@ export class StudentDetailsComponent implements OnInit {
             ) {
               this.student = element;
               this.options={
-                path:'../../assets/'+this.student['sex'].toLowerCase()+'.json'
+                path:'assets/'+this.student['sex'].toLowerCase()+'.json'
               };
             }
           });
