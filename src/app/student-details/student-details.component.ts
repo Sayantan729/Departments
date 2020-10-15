@@ -15,7 +15,7 @@ export class StudentDetailsComponent implements OnInit {
   student;
   searching;
 
-  options:AnimationOptions={path:'assets/tryagain.json'};
+  options:AnimationOptions;
 
   constructor(
     private fetchData: DataServiceService,
@@ -23,6 +23,7 @@ export class StudentDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.options={path:'assets/tryagain.json'};
     this.searching=true;
     this.route.paramMap.subscribe((params) => {
       console.log(params);
