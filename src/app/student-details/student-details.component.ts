@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataServiceService } from '../services/data-service.service';
+import { AppUtility } from '../utility/utility';
 
 @Component({
   selector: 'app-student-details',
@@ -38,6 +39,11 @@ export class StudentDetailsComponent implements OnInit {
 
     })
     
+  }
+
+  setSubscript(num:number):string
+  {
+    return AppUtility.setSubscript(num);
   }
 
 }
