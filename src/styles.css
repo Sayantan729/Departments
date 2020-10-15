@@ -257,7 +257,30 @@ body {
 .card-phone {
   font-size: 2rem;
   margin: 15px 0px;
+ 
 }
+
+.cse-card-phone
+{
+  color: greenyellow;
+}
+
+.ece-card-phone
+{
+  color:#ffee58;
+}
+
+.ee-card-phone
+{
+  color:#d50000;
+}
+
+.it-card-phone
+{
+  color:#03a9f4
+}
+
+
 .card-address {
   font-size: 1.5rem;
   margin: 15px 0px;

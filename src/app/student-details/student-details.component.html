@@ -15,7 +15,7 @@
     </div>
     <div class="card-year">{{ setSubscript(student.year) }} Year</div>
     <div class="card-sex">{{ student.sex }}</div>
-    <div class="card-phone">
+    <div class="card-phone {{student.dept| lowercase}}-card-phone" >
       <i class="fas fa-phone-alt" style="margin-right: 10px"></i
       >{{ student.phone }}
     </div>
@@ -28,7 +28,7 @@
 
 <div *ngIf="searching" style="width: 50%; margin: auto; color: white; font-size: 2rem;">
 
-  Loading...
+  <ng-lottie [options]="options"></ng-lottie>
 
 </div>
 
