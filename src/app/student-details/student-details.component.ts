@@ -45,7 +45,7 @@ export class StudentDetailsComponent implements OnInit {
             }
           });
           if(!this.student)
-          this.options={path:'assets/animations/tryagain.json'};
+          this.options={path:'assets/animations/tryagain.json',loop:-1};
 
         });
       });
