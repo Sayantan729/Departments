@@ -13,7 +13,7 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class StudentDetailsComponent implements OnInit {
   student;
-  searching;
+  searching:boolean;
 
   options:AnimationOptions;
 

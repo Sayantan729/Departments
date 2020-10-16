@@ -9,7 +9,7 @@ import { AppUtility } from '../utility/utility';
 })
 export class RecordRowComponent implements OnInit {
   @Input('record') student;
-  dept;
+  dept:string;
 
   constructor(private router:Router) { }
 
@@ -24,7 +24,7 @@ export class RecordRowComponent implements OnInit {
 
   }
 
-  navigateTo()
+  navigateTo():void
   {
     this.router.navigate(['students',this.student['dept'],this.student['roll'],this.student['year']])
 

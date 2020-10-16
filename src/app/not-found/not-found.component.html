@@ -1,6 +1,6 @@
 <div style="width: 60%; margin: auto; text-align: center;padding: 20px;">
-    <ng-lottie [options]="options"></ng-lottie>
-    <div style="color: rgb(230,233,237); font-weight: bold; font-size: xx-large;">PAGE NOT FOUND</div>
+    <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+    <div style="color: rgb(230,233,237); font-weight: bold; font-size: 4rem">PAGE NOT FOUND</div>
     
 
 </div>

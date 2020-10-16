@@ -5,13 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ExchangeService {
-  data=[];
+  data:any[]=[];
 
-  _data;
+  _data:BehaviorSubject<any[]>;
 
   constructor() {this._data=new BehaviorSubject(this.data); }
 
-  setData(data)
+  setData(data):void
   {
     this._data.next(data);
   }
