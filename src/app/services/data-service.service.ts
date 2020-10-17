@@ -19,6 +19,15 @@ export class DataServiceService {
     ).pipe(map((response) => response.json()));
   }
 
+  getIndividualData(roll,year,dept)
+  {
+    return from(
+      fetch('https://parkingbooking.000webhostapp.com/getStudentIndividual.php?roll='+roll+"&year="+year+"&dept="+dept, {
+        method: 'GET',
+      })
+    ).pipe(map((response) => response.json()));
+  }
+
   updateData(student) {
     return from(
       fetch('https://parkingbooking.000webhostapp.com/insertStudent.php', {

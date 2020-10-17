@@ -29,21 +29,14 @@ export class StudentDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       console.log(params);
 
-      this.fetchData.getData().subscribe((response) => {
+      this.fetchData.getIndividualData(params.get('roll'),params.get('year'),params.get('dept')).subscribe((response) => {
         response.then((data) => {
           this.searching=false;
-          data.forEach((element) => {
-            if (
-              element['roll'] === params.get('roll') &&
-              element['dept'] === params.get('dept') &&
-              element['year'] === params.get('year')
-            ) {
-              this.student = element;
-              this.options={
-                path:'assets/animations/'+this.student['sex'].toLowerCase()+'.json'
-              };
-            }
-          });
+          if(data.status=='OK')
+          {
+            this.student=data.student;
+            this.options={path:'assets/animations/'+this.student.sex.toLowerCase()+'.json'}
+          }
           if(!this.student)
           this.options={path:'assets/animations/tryagain.json',loop:-1};
 
