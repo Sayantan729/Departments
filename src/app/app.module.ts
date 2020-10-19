@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RecordsComponent } from './records/records.component';
 import { RecordRowComponent } from './record-row/record-row.component';
 import { FormComponent } from './form/form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { TablePageComponent } from './table-page/table-page.component';
@@ -14,6 +14,9 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { EditFormComponent } from './edit-form/edit-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export function playerFactory() {
   return player;
@@ -29,14 +32,19 @@ export function playerFactory() {
     StudentDetailsComponent,
     TablePageComponent,
     HomepageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    LottieModule.forRoot({player:playerFactory})
+    LottieModule.forRoot({player:playerFactory}),
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule
+    
     
   ],
   providers: [],

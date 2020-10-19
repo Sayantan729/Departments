@@ -1,4 +1,4 @@
 <div class="records">
-  <app-record-row *ngFor="let student of data" [record]="student"></app-record-row>
+  <app-record-row *ngFor="let student of data" [record]="student" (deleteData)="delete($event)" (editData)="edit($event)"></app-record-row>
   
 </div>

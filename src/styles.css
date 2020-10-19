@@ -18,6 +18,11 @@ body {
   margin-left: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.input:disabled
+{
+  background-color: white;
+}
 .error-input {
   border: 5px solid #d50000;
 }
@@ -59,14 +64,10 @@ body {
   grid-template-columns: auto;
 }
 
-.record-row {
-  padding: 20px;
+.record-row-outer
+{
   margin: 30px;
   border-radius: 20px;
-  display: flex;
-  background-color: white;
-  color: black;
-  cursor: pointer;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
@@ -76,7 +77,69 @@ body {
   -moz-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
-  box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 20px 30px black;
+}
+
+
+
+
+
+.record-row {
+  padding: 20px;
+  border-radius: 20px;
+  
+  
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  
+}
+
+
+
+.record-row-inner
+{
+  display: flex;
+}
+
+ .drawer
+{
+ display: flex;
+ justify-content: space-evenly;
+ border-top: 1px solid currentColor;
+ border-radius:0px 0px 20px 20px;
+ padding: 15px;
+ -webkit-border-radius:0px 0px 20px 20px;
+ -moz-border-radius:0px 0px 20px 20px;
+ -ms-border-radius:0px 0px 20px 20px;
+ -o-border-radius:0px 0px 20px 20px;
+ 
+} 
+
+.drawer-button
+{
+  
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+}
+
+.drawer-button:hover
+{
+  background-color: rgba(0, 0, 0, 0.171);
+  color: white;
+
 }
 
 
@@ -98,10 +161,7 @@ body {
   color: #fff;
 }
 
-.record-row:hover
-{
-  box-shadow: 0px 20px 30px black;
-}
+
 
 .right-align {
   display: flex;
@@ -284,4 +344,20 @@ body {
 .card-address {
   font-size: 1.5rem;
   margin: 15px 0px;
+}
+
+.flat-bottom
+{
+  border-radius: 20px 20px 0px 0px;
+  -webkit-border-radius: 20px 20px 0px 0px;
+  -moz-border-radius: 20px 20px 0px 0px;
+  -ms-border-radius: 20px 20px 0px 0px;
+  -o-border-radius: 20px 20px 0px 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; }
+
+.mat-dialog-container
+{
+  background-color: rgb(33, 33, 33);
 }

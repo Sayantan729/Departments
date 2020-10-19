@@ -6,6 +6,6 @@
     No records entered yet
   </div>
 
-  <app-records class="left-bar" [inputData]="_data" *ngIf="_data.length"></app-records>
+  <app-records class="left-bar" [inputData]="_data" *ngIf="_data.length" (deleteData)="deleteData($event)" (editData)="editData($event)"></app-records>
   <app-form class="right-bar" (insertData)="updateData($event)"></app-form>
 </div>

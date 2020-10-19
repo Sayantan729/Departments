@@ -29,7 +29,7 @@ export class StudentDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       console.log(params);
 
-      this.fetchData.getIndividualData(params.get('roll'),params.get('year'),params.get('dept')).subscribe((response) => {
+      this.fetchData.getIndividualStudent(params.get('roll'),params.get('year'),params.get('dept')).subscribe((response) => {
         response.then((data) => {
           this.searching=false;
           if(data.status=='OK')

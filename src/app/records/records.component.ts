@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataServiceService } from './../services/data-service.service';
 import { ExchangeService } from './../services/exchange.service';
 
@@ -10,6 +10,8 @@ import { ExchangeService } from './../services/exchange.service';
 export class RecordsComponent implements OnInit {
   
   @Input('inputData') newData;
+  @Output('deleteData') deleteData=new EventEmitter();
+  @Output('editData') editData=new EventEmitter();
   data
 
   constructor(private fetchData: DataServiceService,private exchangeService:ExchangeService) {}
@@ -20,6 +22,16 @@ export class RecordsComponent implements OnInit {
     
     
     
+  }
+
+  delete(data)
+  {
+    this.deleteData.emit(data);
+  }
+
+  edit(data)
+  {
+    this.editData.emit(data);
   }
 
   

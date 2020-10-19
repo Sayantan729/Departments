@@ -1,0 +1,209 @@
+<div style=" height: calc(50vh); overflow-y: auto; background-color:rgb(33,33,33); padding: 20px; padding-bottom: 0px;">
+  <h2 style="padding: 5px; border-bottom: 1px solid grey; color: white">
+    Edit
+  </h2>
+  <div
+    style="
+      font-size: smaller;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.349);
+    "
+  >
+    Note: Changes to roll number, year and department are not allowed. If you need to make changes to any of these fields, please delete this record and enter a new one in its place. 
+  </div>
+    <form style="width: 100%; margin-bottom: 20px" [formGroup]="form">
+      <div class="input-group">
+        <div>
+          <label for="name" style="color: white; font-weight: bolder"
+            >Student name</label
+          >
+        </div>
+  
+        <input
+          formControlName="studentName"
+          class="input"
+          type="text"
+          id="name"
+          placeholder="Student Name"
+          [class.error-input]="studentName.touched && studentName.invalid"
+          [(ngModel)]="student.name"
+          
+        />
+        <div
+          class="error-text"
+          *ngIf="studentName.touched && studentName.invalid"
+        >
+          <small *ngIf="studentName.errors.required"
+            >Please enter Student name</small
+          ><small *ngIf="studentName.errors.formatNotProper"
+            >Only letters and spaces are accepted</small
+          >
+        </div>
+      </div>
+      <div class="input-group">
+        <div>
+          <label for="roll" style="color: white; font-weight: bolder"
+            >Roll number</label
+          >
+        </div>
+        <input
+          formControlName="rollNum"
+          class="input"
+          type="text"
+          id="roll"
+          placeholder="Roll Number"
+          [class.error-input]="rollNum.touched && rollNum.invalid"
+          
+        />
+        <div class="error-text" *ngIf="rollNum.touched && rollNum.invalid">
+          <small *ngIf="rollNum.errors.required"
+            >Please enter Student roll number</small
+          ><small
+            *ngIf="!rollNum.errors.required && rollNum.errors.formatNotProper"
+            >Only numbers not starting with 0 are accepted</small
+          >
+        </div>
+      </div>
+  
+      <div style="display: flex" class="input-group">
+        <div>
+          <label
+            for="gender"
+            style="color: white; font-weight: bolder; margin-right: 20px"
+            >Sex</label
+          >
+        </div>
+        <div style="margin-right: 18px">
+          <input
+            type="radio"
+            name="gender"
+            id="male1"
+            formControlName="gender"
+            value="Male"
+            [(ngModel)]="student.sex"
+          />
+          <label for="male1" style="color: white">Male</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            name="gender"
+            id="female1"
+            formControlName="gender"
+            value="Female"
+            [(ngModel)]="student.sex"
+          />
+          <label for="female1" style="color: white">Female</label>
+        </div>
+      </div>
+      <div class="error-text" *ngIf="gender.touched && gender.invalid">
+        <small>Please select gender</small>
+      </div>
+      <div style="width: 60%" class="input-group">
+        <div>
+          <label for="department" style="color: white; font-weight: bolder"
+            >Department</label
+          >
+        </div>
+        <select
+          class="input"
+          id="department"
+          style="width: 100%"
+          formControlName="department"
+          [class.error-input]="department.touched && department.invalid"
+          
+        >
+          <option value="Department" selected disabled>Department</option>
+          <option value="CSE">Computer Science and Engineering</option>
+          <option value="ECE">Electronics and Communication Engineering</option>
+          <option value="EE">Electrical Engineering</option>
+          <option value="IT">Information Technology</option>
+        </select>
+        <div class="error-text" *ngIf="department.touched && department.invalid">
+          <small>Please select department</small>
+        </div>
+      </div>
+      <div class="input-group">
+        <div>
+          <label for="year" style="color: white; font-weight: bolder">Year</label>
+        </div>
+        <select
+          class="input"
+          id="year"
+          formControlName="year"
+          [class.error-input]="year.touched && year.invalid"
+          
+        >
+          <option value="Year" selected disabled>Year</option>
+          <option value="1">1st year</option>
+          <option value="2">2nd year</option>
+          <option value="3">3rd year</option>
+          <option value="4">4th year</option>
+        </select>
+        <div class="error-text" *ngIf="year.touched && year.invalid">
+          <small>Please select year</small>
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <div>
+          <label for="phone" style="color: white; font-weight: bolder"
+            >Phone</label
+          >
+        </div>
+        <input
+          class="input"
+          id="phone"
+          placeholder="Phone number"
+          formControlName="phone"
+          [class.error-input]="phone.touched && phone.invalid"
+          [(ngModel)]="student.phone"
+        />
+  
+        <div class="error-text" *ngIf="phone.touched && phone.invalid">
+          <small *ngIf="phone.errors.required">Please enter phone number</small>
+          <small *ngIf="!phone.errors.required && phone.errors.formatNotProper"
+            >Phone number format not proper; Required: 10-digit number without
+            country code
+          </small>
+        </div>
+      </div>
+  
+      <div class="input-group">
+        <div>
+          <label for="address" style="color: white; font-weight: bolder"
+            >Address</label
+          >
+        </div>
+        <textarea
+          id="address"
+          class="input"
+          rows="3"
+          placeholder="Address"
+          formControlName="address"
+          [class.error-input]="address.touched && address.invalid"
+          [(ngModel)]="student.address"
+        ></textarea>
+  
+        <div class="error-text" *ngIf="address.touched && address.invalid">
+          <small>Please enter address</small>
+        </div>
+      </div>
+
+      <div style="position: sticky; bottom: 0px; background-color: rgb(33,33,33); padding: 10px;"><button
+        class="button submit-button"
+        [disabled]="form.invalid"
+        [mat-dialog-close]="student"
+        
+
+      >
+        Save Changes
+      </button>
+      <button class="button reset-button" (click)="clearAll()">Reset</button>
+      <button class="button" (click)="cancel()">Cancel</button></div>
+  
+      
+    </form>
+  </div>
+  

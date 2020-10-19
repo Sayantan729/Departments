@@ -1,24 +1,53 @@
-<div [class]="dept" class="record-row" (click)="navigateTo()">
-  <div class="left-bar">
-    <div class="name-outer">
-      <span class="name">{{ student.name }}</span>
+<div
+class="record-row-outer"
+ (mouseenter)="showDrawer = true"
+(mouseleave)="showDrawer = false"
+>
+  <div
+  
+  class="record-row"
+  [class]="dept"
+  [class.flat-bottom]="showDrawer"
+  
+>
+  <div class="record-row-inner">
+    <div class="left-bar">
+      <div class="name-outer">
+        <span class="name">{{ student.name }}</span>
+      </div>
+      <div>
+        <span class="sex">{{ student.sex }}</span>
+      </div>
+      <div>
+        <span class="year">{{ setSubscript(student.year) }}</span> Year
+      </div>
     </div>
-    <div>
-     <span class="sex">{{ student.sex }}</span>
-    </div>
-    <div>
-      <span class="year">{{ setSubscript(student.year) }}</span> Year
-    </div>
-  </div>
-  <div class="right-bar">
-    <div class="right-align">
-      <span class="dept">{{ student.dept }}</span>
-    </div>
+    <div class="right-bar">
+      <div class="right-align">
+        <span class="dept">{{ student.dept }}</span>
+      </div>
 
-    <div class="right-align">
-        <span class="roll"><div style="font-size: 0.4em">Roll</div>
-        <div >{{ student.roll }}</div></span>
-        
+      <div class="right-align">
+        <span class="roll"
+          ><div style="font-size: 0.4em">Roll</div>
+          <div>{{ student.roll }}</div></span
+        >
+      </div>
     </div>
   </div>
+
+  
+</div>
+<div class="drawer" [class]="dept" *ngIf="showDrawer" [@drawerAnimation] >
+  <div class="drawer-button" (click)="navigateTo()">
+    <i class="fas fa-eye" style="margin: 5px"></i>View
+  </div>
+  <div class="drawer-button" (click)="openDialog()">
+    <i class="fas fa-user-edit" style="margin: 5px"></i>Edit
+  </div>
+  <div class="drawer-button" (click)="delete()">
+    <i class="fas fa-trash-alt" style="margin: 5px"></i>Delete
+  </div>
+</div>
+
 </div>

@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   
   form: FormGroup;
 
-  constructor(private exchangeService:ExchangeService) {
+  constructor() {
 
     this.form = new FormGroup({
       studentName: new FormControl('', [

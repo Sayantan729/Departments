@@ -23,7 +23,7 @@ export class TablePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.searching=true;
-    this.fetchData.getData().subscribe((response) => {
+    this.fetchData.getStudents().subscribe((response) => {
       response.then((data) => {
         this.searching=false;
         this._data.length = 0;
@@ -39,10 +39,45 @@ export class TablePageComponent implements OnInit {
   updateData(data) {
     this._data.splice(0, 0, data);
     //this.exchangeService.setData(this._data);
-    this.fetchData.updateData(data).subscribe((response) => {
+    this.fetchData.createStudent(data).subscribe((response) => {
       response.then((rdata) => {
         if (rdata['Status'] !== 'OK')
           {this._data.splice(this._data.indexOf(data), 1);
+            //this.exchangeService.setData(this._data);
+          }
+          
+      });
+    });
+  }
+
+  deleteData(data):void
+  {
+    let index=this._data.indexOf(data);
+    this._data.splice(index, 1);
+    //this.exchangeService.setData(this._data);
+    this.fetchData.deleteStudent(data).subscribe((response) => {
+      response.then((rdata) => {
+        if (rdata['Status'] !== 'OK')
+          {this._data.splice(index, 0,data);
+            //this.exchangeService.setData(this._data);
+          }
+          
+      });
+    });
+    console.log(data);
+    
+  }
+
+  editData(data):void
+  {
+    let index=this._data.indexOf(data.oldData);
+    this._data.splice(index,1,data.newData);
+    this.fetchData.updateStudent(data.newData).subscribe((response) => {
+      response.then((rdata) => {
+       
+        
+        if (rdata['Status'] !== 'OK')
+          {this._data.splice(index, 1,data.oldData);
             //this.exchangeService.setData(this._data);
           }
           
