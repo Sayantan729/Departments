@@ -15,7 +15,7 @@
     <form style="width: 100%; margin-bottom: 20px" [formGroup]="form">
       <div class="input-group">
         <div>
-          <label for="name" style="color: white; font-weight: bolder"
+          <label for="name-edit" style="color: white; font-weight: bolder"
             >Student name</label
           >
         </div>
@@ -24,7 +24,7 @@
           formControlName="studentName"
           class="input"
           type="text"
-          id="name"
+          id="name-edit"
           placeholder="Student Name"
           [class.error-input]="studentName.touched && studentName.invalid"
           [(ngModel)]="student.name"
@@ -43,7 +43,7 @@
       </div>
       <div class="input-group">
         <div>
-          <label for="roll" style="color: white; font-weight: bolder"
+          <label for="roll-edit" style="color: white; font-weight: bolder"
             >Roll number</label
           >
         </div>
@@ -51,7 +51,7 @@
           formControlName="rollNum"
           class="input"
           type="text"
-          id="roll"
+          id="roll-edit"
           placeholder="Roll Number"
           [class.error-input]="rollNum.touched && rollNum.invalid"
           
@@ -102,13 +102,13 @@
       </div>
       <div style="width: 60%" class="input-group">
         <div>
-          <label for="department" style="color: white; font-weight: bolder"
+          <label for="department-edit" style="color: white; font-weight: bolder"
             >Department</label
           >
         </div>
         <select
           class="input"
-          id="department"
+          id="department-edit"
           style="width: 100%"
           formControlName="department"
           [class.error-input]="department.touched && department.invalid"
@@ -126,11 +126,11 @@
       </div>
       <div class="input-group">
         <div>
-          <label for="year" style="color: white; font-weight: bolder">Year</label>
+          <label for="year-edit" style="color: white; font-weight: bolder">Year</label>
         </div>
         <select
           class="input"
-          id="year"
+          id="year-edit"
           formControlName="year"
           [class.error-input]="year.touched && year.invalid"
           
@@ -148,13 +148,13 @@
   
       <div class="input-group">
         <div>
-          <label for="phone" style="color: white; font-weight: bolder"
+          <label for="phone-edit" style="color: white; font-weight: bolder"
             >Phone</label
           >
         </div>
         <input
           class="input"
-          id="phone"
+          id="phone-edit"
           placeholder="Phone number"
           formControlName="phone"
           [class.error-input]="phone.touched && phone.invalid"
@@ -172,7 +172,7 @@
   
       <div class="input-group">
         <div>
-          <label for="address" style="color: white; font-weight: bolder"
+          <label for="address-edit" style="color: white; font-weight: bolder"
             >Address</label
           >
         </div>
@@ -181,7 +181,7 @@
           class="input"
           rows="3"
           placeholder="Address"
-          formControlName="address"
+          formControlName="address-edit"
           [class.error-input]="address.touched && address.invalid"
           [(ngModel)]="student.address"
         ></textarea>
